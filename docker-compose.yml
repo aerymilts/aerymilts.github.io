@@ -1,0 +1,21 @@
+version: "3"
+services:
+  build:
+    stdin_open: true
+    tty: true
+    image: jekyll/jekyll:${JEKYLL_VERSION}
+    container_name: j_build
+    volumes:
+      - ./:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    command: jekyll build
+  serve:
+    stdin_open: true
+    tty: true
+    ports:
+      - 4000:4000
+    image: jekyll/jekyll:${JEKYLL_VERSION}
+    container_name: j_serve
+    volumes:
+      - ./:/srv/jekyll
+    command: jekyll serve --force_polling --config _config.yml,_config-dev.yml
