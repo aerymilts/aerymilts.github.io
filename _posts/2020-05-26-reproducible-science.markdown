@@ -9,7 +9,7 @@ hidden: true # don't count this post in blog pagination
 description: "This is a simple and minimalist template for Jekyll for those who likes to eat noodles."
 category: talk
 author: kennethho
-externalLink: https://aerymilts.github.io/talks/reproducible-science
+externalLink: https://aerymilts.github.io/talk/reproducible-science
 ---
 
-[Content](https://github.com/aerymilts/talks/reproducible-science) and [slides](https://aerymilts.github.io/talks/reproducible-science).
+[Content](https://github.com/aerymilts/talk/tree/master/reproducible-science) and [slides](https://aerymilts.github.io/talk/reproducible-science).
