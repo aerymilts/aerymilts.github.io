@@ -131,7 +131,7 @@ compress_html:
 exclude:
   [
     "travis.sh",
-    "docker-compose.yml"
+    "docker-compose.yml",
     "README.md",
     "Gemfile",
     "Gemfile.lock",
