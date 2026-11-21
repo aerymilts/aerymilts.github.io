@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 270" width="820" height="270" role="img" aria-label="Two-tier anomaly ensemble and seed-based bipartite graph re-ranking architecture">
+  <defs>
+    <style>
+      .title { font: 700 14px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #1e293b; }
+      .box-title { font: 600 12px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 10.5px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #475569; }
+      .edge-lbl { font: 500 10px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #475569; }
+      .tag { font: 600 9.5px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #4b0082; letter-spacing: 0.4px; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="270" rx="8" fill="#ffffff"/>
+  <text x="20" y="28" class="title">TikTok Live: Seed-Based Bipartite Propagation + Hub-Gated Ensemble Re-Ranking</text>
+
+  <!-- Tier 1: Top Graph Propagation Row -->
+  <rect x="20" y="52" width="168" height="68" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+  <text x="104" y="75" text-anchor="middle" class="box-title">Confirmed Malicious</text>
+  <text x="104" y="91" text-anchor="middle" class="box-title">Streamers (Seeds)</text>
+  <text x="104" y="108" text-anchor="middle" class="box-sub">Manual case-review verified</text>
+
+  <line x1="188" y1="86" x2="236" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="212" y="77" text-anchor="middle" class="edge-lbl">Propagate</text>
+
+  <rect x="240" y="52" width="176" height="68" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="328" y="75" text-anchor="middle" class="box-title">Interacting Users</text>
+  <text x="328" y="92" text-anchor="middle" class="box-sub">Weighted by interaction type</text>
+  <text x="328" y="107" text-anchor="middle" class="box-sub">(gifting &gt; chat / passive view)</text>
+
+  <line x1="416" y1="86" x2="464" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="440" y="77" text-anchor="middle" class="edge-lbl">Aggregate</text>
+
+  <rect x="468" y="52" width="164" height="68" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="550" y="78" text-anchor="middle" class="box-title">Downstream Candidate</text>
+  <text x="550" y="94" text-anchor="middle" class="box-title">Streamers</text>
+  <text x="550" y="109" text-anchor="middle" class="box-sub">Weighted risk flow score</text>
+
+  <!-- Tier 1: Bottom Anomaly Ensemble Row -->
+  <rect x="20" y="164" width="396" height="72" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.4"/>
+  <text x="218" y="185" text-anchor="middle" class="tag">HIGH-RECALL RISK PERCEPTION</text>
+  <text x="218" y="204" text-anchor="middle" class="box-title">Multi-Signal Anomaly Ensemble</text>
+  <text x="218" y="222" text-anchor="middle" class="box-sub">Business Heuristics  •  Isolation Forest  •  Nelson Rules (1, 4, 8)  •  DBSCAN</text>
+
+  <!-- Merge into Hub-Gated Re-Ranking -->
+  <path d="M 550 120 L 550 158" stroke="#2563eb" stroke-width="1.6" fill="none" marker-end="url(#arrow-accent)"/>
+  <line x1="416" y1="200" x2="464" y2="200" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="468" y="162" width="176" height="76" rx="6" fill="#f5f3ff" stroke="#4b0082" stroke-width="1.6"/>
+  <text x="556" y="182" text-anchor="middle" class="tag">HUB-GATED RE-RANKING</text>
+  <text x="556" y="200" text-anchor="middle" class="box-title">Graph + Behavioral Gate</text>
+  <text x="556" y="216" text-anchor="middle" class="box-sub">Account age / refund priors</text>
+  <text x="556" y="230" text-anchor="middle" class="box-sub">+ emulator device telemetry</text>
+
+  <line x1="644" y1="200" x2="674" y2="200" stroke="#4b0082" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="678" y="164" width="122" height="72" rx="6" fill="#ecfdf5" stroke="#0d9488" stroke-width="1.6"/>
+  <text x="739" y="188" text-anchor="middle" class="box-title">Prioritized</text>
+  <text x="739" y="204" text-anchor="middle" class="box-title">Enforcement</text>
+  <text x="739" y="222" text-anchor="middle" class="box-sub">High-precision queue</text>
+</svg>

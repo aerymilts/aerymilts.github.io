@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 290" width="820" height="290" role="img" aria-label="SmartJar zero-label physical soil segmentation pipeline from smartphone photo to USDA soil texture">
+  <defs>
+    <style>
+      .title { font: 700 14px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #1e293b; }
+      .box-title { font: 600 11.5px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 10px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #475569; }
+      .small-lbl { font: 600 9.5px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #1e293b; }
+      .jar-lbl { font: 500 9.5px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #334155; }
+      .tag { font: 600 9px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #4b0082; letter-spacing: 0.4px; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="290" rx="8" fill="#ffffff"/>
+  <text x="20" y="28" class="title">SmartJar: Zero-Label Physical Segmentation Pipeline (2D Photo → 1D Stokes' Law Profile)</text>
+
+  <!-- Step 1: Jar Schematic with Glare & Marker Split -->
+  <rect x="20" y="48" width="136" height="196" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="88" y="66" text-anchor="middle" class="box-title">1. Input Photo</text>
+  <text x="88" y="80" text-anchor="middle" class="box-sub">Glare &amp; marker splits</text>
+
+  <!-- Jar body -->
+  <rect x="44" y="92" width="66" height="128" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+  <!-- Water -->
+  <rect x="45.5" y="93.5" width="63" height="32" fill="#e0f2fe"/>
+  <!-- Clay -->
+  <rect x="45.5" y="125.5" width="63" height="18" fill="#d6b48e"/>
+  <!-- Silt -->
+  <rect x="45.5" y="143.5" width="63" height="26" fill="#b08968"/>
+  <!-- Sand -->
+  <rect x="45.5" y="169.5" width="63" height="49" fill="#8d6e63"/>
+  <!-- Vertical specular glare streak -->
+  <rect x="70" y="94" width="6" height="124" fill="#ffffff" fill-opacity="0.72"/>
+  <!-- Marker line -->
+  <line x1="46" y1="158" x2="108" y2="158" stroke="#1e293b" stroke-width="1.4" stroke-dasharray="3,2"/>
+  <!-- Layer labels -->
+  <text x="114" y="113" class="jar-lbl">Water</text>
+  <text x="114" y="138" class="jar-lbl">Clay</text>
+  <text x="114" y="159" class="jar-lbl">Silt</text>
+  <text x="114" y="196" class="jar-lbl">Sand</text>
+  <text x="88" y="235" text-anchor="middle" class="box-sub">Bg removal + crop</text>
+
+  <line x1="156" y1="146" x2="180" y2="146" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: SLIC LABxy -->
+  <rect x="184" y="88" width="136" height="116" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="252" y="111" text-anchor="middle" class="box-title">2. SLIC Superpixels</text>
+  <text x="252" y="129" text-anchor="middle" class="box-sub">5D LABxy space</text>
+  <text x="252" y="147" text-anchor="middle" class="box-sub">Separates glare (L*)</text>
+  <text x="252" y="162" text-anchor="middle" class="box-sub">from soil chroma (a*, b*)</text>
+  <text x="252" y="184" text-anchor="middle" class="box-sub">Initial RAG over regions</text>
+
+  <line x1="320" y1="146" x2="344" y2="146" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: JSD + Vertical Proximity Merge -->
+  <rect x="348" y="76" width="168" height="140" rx="6" fill="#f5f3ff" stroke="#4b0082" stroke-width="1.6"/>
+  <text x="432" y="96" text-anchor="middle" class="tag">CORE INTERVENTION</text>
+  <text x="432" y="114" text-anchor="middle" class="box-title">3. JSD + Vertical Merge</text>
+  <text x="432" y="134" text-anchor="middle" class="box-sub">Color-distribution similarity</text>
+  <text x="432" y="149" text-anchor="middle" class="box-sub">(Jensen-Shannon Divergence)</text>
+  <text x="432" y="169" text-anchor="middle" class="box-sub">+ y-axis spatial proximity</text>
+  <text x="432" y="191" text-anchor="middle" class="box-sub">Reunites non-adjacent halves</text>
+  <text x="432" y="205" text-anchor="middle" class="box-sub">across glare &amp; marker lines</text>
+
+  <line x1="516" y1="146" x2="540" y2="146" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: 1D Modal Projection -->
+  <rect x="544" y="88" width="124" height="116" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.4"/>
+  <text x="606" y="111" text-anchor="middle" class="box-title">4. 1D Projection</text>
+  <text x="606" y="131" text-anchor="middle" class="box-sub">Modal label per</text>
+  <text x="606" y="146" text-anchor="middle" class="box-sub">horizontal row (y)</text>
+  <text x="606" y="168" text-anchor="middle" class="box-sub">Filters residual edge</text>
+  <text x="606" y="183" text-anchor="middle" class="box-sub">glare → band heights</text>
+
+  <line x1="668" y1="146" x2="692" y2="146" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 5: USDA Mapping -->
+  <rect x="696" y="76" width="106" height="140" rx="6" fill="#ecfdf5" stroke="#0d9488" stroke-width="1.6"/>
+  <text x="749" y="100" text-anchor="middle" class="box-title">5. USDA Class</text>
+  <text x="749" y="120" text-anchor="middle" class="box-sub">Illustrative sample:</text>
+  <text x="749" y="138" text-anchor="middle" class="small-lbl">54.8% Sand</text>
+  <text x="749" y="154" text-anchor="middle" class="small-lbl">26.9% Silt</text>
+  <text x="749" y="170" text-anchor="middle" class="small-lbl">18.3% Clay</text>
+  <text x="749" y="192" text-anchor="middle" class="tag">→ SANDY LOAM</text>
+  <text x="749" y="207" text-anchor="middle" class="box-sub">(water excluded)</text>
+
+  <text x="410" y="274" text-anchor="middle" class="box-sub">Illustrative single-jar prototype heights: 358 px water (excluded) | 190 px clay | 280 px silt | 569 px sand (1,039 px total soil).</text>
+</svg>

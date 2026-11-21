@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" width="820" height="220" role="img" aria-label="Binance three-stage Risk Strategy Lifecycle with Prometheus observability feedback loop">
+  <defs>
+    <style>
+      .title { font: 700 14px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #1e293b; }
+      .box-title { font: 600 12px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 10.5px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #475569; }
+      .edge-lbl { font: 500 10px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #475569; }
+      .warn-lbl { font: 600 10px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #b91c1c; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="220" rx="8" fill="#ffffff"/>
+  <text x="20" y="28" class="title">Binance Web3 Risk: Three-Stage Monitor Lifecycle &amp; Fail-Open Observability</text>
+
+  <!-- Stage 1 -->
+  <rect x="20" y="56" width="155" height="76" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.4"/>
+  <text x="97.5" y="80" text-anchor="middle" class="box-title">1. Backtest</text>
+  <text x="97.5" y="98" text-anchor="middle" class="box-sub">Historical replay</text>
+  <text x="97.5" y="114" text-anchor="middle" class="box-sub">Standalone + incremental P/R</text>
+
+  <line x1="175" y1="94" x2="218" y2="94" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="196" y="85" text-anchor="middle" class="edge-lbl">Pass P/R</text>
+
+  <!-- Stage 2 -->
+  <rect x="222" y="56" width="168" height="76" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="306" y="80" text-anchor="middle" class="box-title">2. Grayscale Shadow</text>
+  <text x="306" y="98" text-anchor="middle" class="box-sub">Shadow A/B on live traffic</text>
+  <text x="306" y="114" text-anchor="middle" class="box-sub">Verify risk shift &amp; net gain</text>
+
+  <line x1="390" y1="94" x2="436" y2="94" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="413" y="85" text-anchor="middle" class="edge-lbl">Promote</text>
+
+  <!-- Stage 3 -->
+  <rect x="440" y="56" width="160" height="76" rx="6" fill="#ecfdf5" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="520" y="80" text-anchor="middle" class="box-title">3. Production</text>
+  <text x="520" y="98" text-anchor="middle" class="box-sub">Live automated</text>
+  <text x="520" y="114" text-anchor="middle" class="box-sub">enforcement</text>
+
+  <line x1="600" y1="94" x2="636" y2="94" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4: Observability Gates -->
+  <rect x="640" y="52" width="162" height="84" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="721" y="75" text-anchor="middle" class="box-title">Observability Gates</text>
+  <text x="721" y="93" text-anchor="middle" class="box-sub">Prometheus real-time alerts:</text>
+  <text x="721" y="109" text-anchor="middle" class="box-sub">• Traffic volume &amp; tier shift</text>
+  <text x="721" y="124" text-anchor="middle" class="box-sub">• Null / unclassified spikes</text>
+
+  <!-- Rollback / Feedback Loop -->
+  <path d="M 721 136 L 721 178 L 306 178 L 306 138" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-red)"/>
+  <rect x="424" y="167" width="180" height="20" rx="4" fill="#ffffff"/>
+  <text x="514" y="181" text-anchor="middle" class="warn-lbl">Anomaly / Fail-Open → Rollback to Shadow</text>
+</svg>
