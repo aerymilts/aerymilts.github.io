@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" width="820" height="220" role="img" aria-label="Binance three-stage Risk Strategy Lifecycle with Prometheus observability feedback loop">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 228" width="820" height="228" role="img" aria-label="Binance three-stage Risk Strategy Lifecycle with Prometheus observability feedback loop">
   <defs>
     <style>
       .title { font: 700 14px "Helvetica Neue", Helvetica, Arial, sans-serif; fill: #1e293b; }
@@ -15,7 +15,7 @@
     </marker>
   </defs>
 
-  <rect width="820" height="220" rx="8" fill="#ffffff"/>
+  <rect width="820" height="228" rx="8" fill="#ffffff"/>
   <text x="20" y="28" class="title">Binance Web3 Risk: Three-Stage Monitor Lifecycle &amp; Fail-Open Observability</text>
 
   <!-- Stage 1 -->
@@ -52,7 +52,6 @@
   <text x="721" y="124" text-anchor="middle" class="box-sub">• Null / unclassified spikes</text>
 
   <!-- Rollback / Feedback Loop -->
-  <path d="M 721 136 L 721 178 L 306 178 L 306 138" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-red)"/>
-  <rect x="424" y="167" width="180" height="20" rx="4" fill="#ffffff"/>
-  <text x="514" y="181" text-anchor="middle" class="warn-lbl">Anomaly / Fail-Open → Rollback to Shadow</text>
+  <path d="M 721 136 L 721 176 L 306 176 L 306 138" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-red)"/>
+  <text x="514" y="198" text-anchor="middle" class="warn-lbl">Anomaly / Fail-Open → Rollback to Shadow</text>
 </svg>
