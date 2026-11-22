@@ -15,7 +15,7 @@ description: "Architectural lessons from TikTok Live AML/refund fraud and Binanc
 
 In standard machine learning, the data distribution shifts slowly and passively. In adversarial risk control, the data distribution actively probes your decision boundaries, splits forbidden actions across multiple accounts, and adapts the moment a rule goes live.
 
-Over four years leading risk data science and security analytics across **TikTok Live (ByteDance)** and **Binance Web3**, I found that catching adaptive adversaries at scale is rarely about training a single stronger classifier. Instead, durable defence rests on three architectural pillars:
+Over three years in risk data science and security analytics across **TikTok Live (ByteDance)** and **Binance Web3**, I found that catching adaptive adversaries at scale is rarely about training a single stronger classifier. Instead, durable defence rests on three architectural pillars:
 
 1. **Separating high-recall perception from high-precision defence**, using graph topology and device priors to resolve hub ambiguity.
 2. **Treating model interpretability as a discovery and compression engine**, rather than post-hoc reporting.
